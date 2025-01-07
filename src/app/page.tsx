@@ -1,5 +1,8 @@
+"use client";
+import Note from "@/components/Note";
 import ProductSec from "@/components/ProductSec";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { FaBars } from "react-icons/fa";
 import { FaTruckFast } from "react-icons/fa6";
@@ -7,12 +10,26 @@ import { MdOutlineShoppingCart, MdOutlineWifiCalling3 } from "react-icons/md";
 import { RiRefund2Fill } from "react-icons/ri";
 
 const page = () => {
+  const [isScrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
   return (
     <>
       <div className="relative bg-cover bg-center h-screen bg-[url('/bg.jpg')]">
         <div className="bg-[#0000007a] w-full absolute h-screen">
           {" "}
-          <nav className=" grid grid-cols-2 lg:grid-cols-3 h-[10dvh] items-center">
+          <nav
+            className={`grid grid-cols-2 lg:grid-cols-3 h-[15dvh] items-center fixed w-full ${
+              isScrolled ? "bg-black" : ""
+            }`}>
             <div className="flex items-center justify-center">
               <Image
                 src="/logo.png"
@@ -93,6 +110,7 @@ const page = () => {
         </div>
       </section>
       <ProductSec />
+      <Note />
     </>
   );
 };

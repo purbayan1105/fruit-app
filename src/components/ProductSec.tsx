@@ -3,7 +3,7 @@ import ProductLists from "./ProductLists";
 const ProductSec = () => {
   return (
     <>
-      <div className="h-screen my-10">
+      <div className="lg:h-screen my-10 h-auto">
         <div className="flex justify-center items-center gap-4 mt-24">
           <p className="text-5xl font-semibold poppins">Our </p>
           <p className="text-5xl font-semibold poppins text-orange-500">
