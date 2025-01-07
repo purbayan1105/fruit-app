@@ -1,3 +1,4 @@
+import ProductSec from "@/components/ProductSec";
 import Image from "next/image";
 import { CiSearch } from "react-icons/ci";
 import { FaBars } from "react-icons/fa";
@@ -25,7 +26,7 @@ const page = () => {
               <FaBars size={25} color="orange" />
             </div>
 
-            <ul className="lg:grid grid-flow-col items-center font-semibold text-sm justify-center space-x-5 hidden">
+            <ul className="lg:grid grid-flow-col items-center font-normal text-sm justify-center space-x-5 hidden poppins">
               <li className="text-orange-400">Home</li>
               <li className="text-white">About</li>
               <li className="text-white">Pages</li>
@@ -34,12 +35,12 @@ const page = () => {
               <li className="text-white">Shop</li>
             </ul>
             <div className=" lg:grid grid-flow-col items-center justify-center text-white px-10 space-x-4 hidden">
-              <MdOutlineShoppingCart size={25} />
+              <MdOutlineShoppingCart color="" size={25} />
               <CiSearch size={25} />
             </div>
           </nav>
           {/* main section */}
-          <main className="flex justify-center items-center h-[80dvh]">
+          <main className="flex justify-center items-center h-[80dvh] poppins">
             <div className="space-y-6">
               <div className="text-orange-400 font-semibold text-2xl text-center">
                 Fresh & Organic
@@ -60,10 +61,10 @@ const page = () => {
           {/* section-2 */}
         </div>
       </div>
-      <section className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center lg:h-[20dvh] bg-gray-300 space-y-6 lg:space-y-0 py-5 lg:py-0">
+      <section className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center lg:h-[30dvh] bg-gray-100 space-y-6 lg:space-y-0 py-5 lg:py-0 poppins">
         <div className="flex items-center gap-3 justify-center">
-          <div className="border-2 border-dotted border-orange-500 rounded-full p-2">
-            <FaTruckFast size={30} />
+          <div className="border-4 border-dotted border-orange-500 rounded-full p-2">
+            <FaTruckFast size={36} />
           </div>
           <div className="">
             <div className="text-xl font-semibold">Free Shipping</div>
@@ -72,8 +73,8 @@ const page = () => {
         </div>
 
         <div className="flex items-center gap-3 justify-center">
-          <div className="border-2 border-dotted border-orange-500 rounded-full p-2">
-            <MdOutlineWifiCalling3 size={30} />
+          <div className="border-4 border-dotted border-orange-500 rounded-full p-2">
+            <MdOutlineWifiCalling3 size={36} />
           </div>
           <div className="">
             <div className="text-xl font-semibold">24/7 Contact</div>
@@ -82,8 +83,8 @@ const page = () => {
         </div>
 
         <div className="flex items-center gap-3 justify-center">
-          <div className="border-2 border-dotted border-orange-500 rounded-full p-2">
-            <RiRefund2Fill size={30} />
+          <div className="border-4 border-dotted border-orange-500 rounded-full p-2">
+            <RiRefund2Fill size={36} />
           </div>
           <div className="">
             <div className="text-xl font-semibold">Refund </div>
@@ -91,6 +92,7 @@ const page = () => {
           </div>
         </div>
       </section>
+      <ProductSec />
     </>
   );
 };

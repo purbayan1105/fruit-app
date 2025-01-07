@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Poppins } from "next/font/google";
+import { ReactQueryProvider } from "@/components/ReactQueryProvider";
+
+const getPoppins = Poppins({
+  weight: ["100", "200", "300", "400", "500"],
+  variable: "--var-poppins",
+  subsets: ["latin"],
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,12 +31,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <ReactQueryProvider>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} ${getPoppins.variable} antialiased`}>
+          {children}
+        </body>
+      </html>
+    </ReactQueryProvider>
   );
 }

@@ -8,18 +8,20 @@ const seedProducts = async () => {
     {
       title: "Apple",
       price: 300,
-      imageUrl: "https://www.ampimex.in/wp-content/uploads/2021/02/apples-.jpg",
+      imageUrl:
+        "https://res.cloudinary.com/doe3ftnti/image/upload/v1736227219/image-removebg-preview_93_ucuqet.png",
     },
     {
-      title: "Banana",
-      price: 100,
+      title: "Strawberry",
+      price: 500,
       imageUrl:
-        "https://nutritionsource.hsph.harvard.edu/wp-content/uploads/2018/08/bananas-1354785_1920.jpg",
+        "https://res.cloudinary.com/doe3ftnti/image/upload/v1736227273/image-removebg-preview_94_fpodhj.png",
     },
     {
       title: "Orange",
       price: 200,
-      imageUrl: "https://cdn.britannica.com/24/174524-050-A851D3F2/Oranges.jpg",
+      imageUrl:
+        "https://res.cloudinary.com/doe3ftnti/image/upload/v1736227220/image-removebg-preview_95_ope4ve.png",
     },
   ];
 
