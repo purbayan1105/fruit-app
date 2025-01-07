@@ -57,7 +57,7 @@ const page = () => {
             </div>
           </nav>
           {/* main section */}
-          <main className="flex justify-center items-center h-[80dvh] poppins">
+          <main className="flex justify-center items-center h-[100dvh] poppins">
             <div className="space-y-6">
               <div className="text-orange-400 font-semibold text-2xl text-center">
                 Fresh & Organic
