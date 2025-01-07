@@ -60,7 +60,7 @@ const page = () => {
           {/* section-2 */}
         </div>
       </div>
-      <section className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center lg:h-[20dvh] bg-gray-200 space-y-6 lg:space-y-0 py-5 lg:py-0">
+      <section className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center lg:h-[20dvh] bg-gray-300 space-y-6 lg:space-y-0 py-5 lg:py-0">
         <div className="flex items-center gap-3 justify-center">
           <div className="border-2 border-dotted border-orange-500 rounded-full p-2">
             <FaTruckFast size={30} />
