@@ -1,4 +1,5 @@
 "use client";
+import Navbar from "@/components/Navbar";
 import Note from "@/components/Note";
 import ProductSec from "@/components/ProductSec";
 import Image from "next/image";
@@ -10,52 +11,11 @@ import { MdOutlineShoppingCart, MdOutlineWifiCalling3 } from "react-icons/md";
 import { RiRefund2Fill } from "react-icons/ri";
 
 const page = () => {
-  const [isScrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  });
-
   return (
     <>
       <div className="relative bg-cover bg-center h-screen bg-[url('/bg.jpg')]">
         <div className="bg-[#0000007a] w-full absolute h-screen">
-          {" "}
-          <nav
-            className={`grid grid-cols-2 lg:grid-cols-3 h-[15dvh] items-center fixed w-full ${
-              isScrolled ? "bg-black" : ""
-            }`}>
-            <div className="flex items-center justify-center">
-              <Image
-                src="/logo.png"
-                width={200}
-                height={100}
-                alt="logo"
-                className=""
-              />
-            </div>
-            <div className="lg:hidden flex justify-end items-center px-8">
-              <FaBars size={25} color="orange" />
-            </div>
-
-            <ul className="lg:grid grid-flow-col items-center font-normal text-sm justify-center space-x-5 hidden poppins">
-              <li className="text-orange-400">Home</li>
-              <li className="text-white">About</li>
-              <li className="text-white">Pages</li>
-              <li className="text-white">News</li>
-              <li className="text-white">Contact</li>
-              <li className="text-white">Shop</li>
-            </ul>
-            <div className=" lg:grid grid-flow-col items-center justify-center text-white px-10 space-x-4 hidden">
-              <MdOutlineShoppingCart color="" size={25} />
-              <CiSearch size={25} />
-            </div>
-          </nav>
+          <Navbar />
           {/* main section */}
           <main className="flex justify-center items-center h-[100dvh] poppins">
             <div className="space-y-6">

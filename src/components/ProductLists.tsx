@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import { FaShoppingCart } from "react-icons/fa";
 import Skeleton from "./Skeleton";
+import Heart from "./Heart";
 
 export type ItemProps = {
   _id: string;
@@ -46,12 +47,12 @@ const ProductLists = () => {
   if (data && isFetched && isSuccess) {
     return (
       <>
-        <div className="flex justify-center items-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-16 gap-6 lg:space-y-0 space-y-6">
+        <div className="flex justify-center items-center relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-16 gap-6 lg:space-y-0 space-y-6 relative">
             {data.map((item: ItemProps) => {
               return (
                 <div
-                  className="  shadow-2xl hover:shadow-white rounded-md space-y-8 py-8  col-span-1 lg:w-[400px]"
+                  className="  shadow-2xl hover:shadow-white rounded-md space-y-8 py-8  col-span-1 lg:w-[400px] relative"
                   key={item._id}>
                   <div className="flex justify-center m-0">
                     <Image
@@ -76,6 +77,9 @@ const ProductLists = () => {
                       <FaShoppingCart />
                       <p className="">Add To Cart</p>
                     </button>
+                  </div>
+                  <div className="absolute z-10 right-1 top-1">
+                    <Heart product={item} />
                   </div>
                 </div>
               );

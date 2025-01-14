@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import { ReactQueryProvider } from "@/components/ReactQueryProvider";
+import { ToastContainer } from "react-toastify";
+import UserProvider from "@/context/UserProvider";
 
 const getPoppins = Poppins({
   weight: ["100", "200", "300", "400", "500"],
@@ -35,7 +37,8 @@ export default function RootLayout({
       <html lang="en">
         <body
           className={`${geistSans.variable} ${geistMono.variable} ${getPoppins.variable} antialiased`}>
-          {children}
+          <UserProvider>{children}</UserProvider>
+          <ToastContainer />
         </body>
       </html>
     </ReactQueryProvider>
