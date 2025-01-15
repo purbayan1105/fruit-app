@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import AddToCart from "@/components/AddToCart";
 
 type ProductPageProps = {
   params: { id: string };
@@ -45,6 +46,7 @@ const page = async ({ params }: ProductPageProps) => {
           </h1>
 
           <p className="text-center text-xl">${product.price}</p>
+          <AddToCart product={product} />
         </div>
       </div>
     );
