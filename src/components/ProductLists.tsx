@@ -1,10 +1,11 @@
 "use client";
-import { ProductServ } from "@/services/productserv";
+import { productServ } from "@/services/productserv";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import { FaShoppingCart } from "react-icons/fa";
 import Skeleton from "./Skeleton";
 import Heart from "./Heart";
+import Link from "next/link";
 
 export type ItemProps = {
   _id: string;
@@ -21,7 +22,7 @@ const ProductLists = () => {
   const { data, isLoading, isFetching, isFetched, isSuccess } = useQuery({
     queryKey: ["data-fetching"],
     queryFn: async () => {
-      let response = await ProductServ();
+      let response = await productServ();
       response = response.data;
       console.log(response);
 
@@ -63,9 +64,11 @@ const ProductLists = () => {
                       className="w-[auto] h-[200px]"
                     />
                   </div>
-                  <div className="text-center text-4xl poppins font-semibold">
-                    {item.title}
-                  </div>
+                  <Link href={`/allproducts/${item._id}`}>
+                    <div className="text-center text-4xl poppins font-semibold">
+                      {item.title}
+                    </div>
+                  </Link>
                   <div className="text-center text-lg poppins  text-gray-500">
                     Per Kg
                   </div>

@@ -32,7 +32,7 @@ const Heart = ({ product }: any) => {
       console.log("data", data);
 
       const targetedProduct = data.find(
-        (fruit: any) => fruit.title === product.title
+        (fruit: any) => fruit.productId.toString() === product._id
       );
       // with id it os not working
       console.log("tp", targetedProduct);

@@ -27,18 +27,25 @@ export async function POST(request: NextRequest) {
           lastName: user.lastName,
           imageUrl: user.imageUrl,
         },
-        process.env.JWT_KEY as string
+        process.env.JWT_KEY as string,
+        { expiresIn: "1h" }
       );
 
       const response = NextResponse.json(
         { message: "Login Successful" },
         { status: 200 }
       );
-      response.cookies.set("userauthtoken", token);
+      response.cookies.set("userauthtoken", token, {
+        httpOnly: true,
+        maxAge: 60 * 60,
+      });
       return response;
     }
   } catch (error) {
     console.log("error at login api", error);
-    return NextResponse.json({ message: error }, { status: 500 });
+    return NextResponse.json(
+      { message: "Internal Server Error" },
+      { status: 500 }
+    );
   }
 }

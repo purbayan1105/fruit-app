@@ -37,7 +37,7 @@ const Page = () => {
       return;
     }
     console.log(profile);
-    const formData = new FormData();
+    const formData = new FormData(); //formData here is not the whol form but only the profile picture
     formData.append("file", profile);
     formData.append("upload_preset", "dummy_preset");
     const uploadResponse = await axios.post(

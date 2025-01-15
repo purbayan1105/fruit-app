@@ -1,4 +1,10 @@
-import ProductLists from "./ProductLists";
+import { productServ } from "@/services/productserv";
+import ProductLists, { ItemProps } from "./ProductLists";
+import axios from "axios";
+
+type ProductSecProps = {
+  data: ItemProps[];
+};
 
 const ProductSec = () => {
   return (
@@ -14,13 +20,44 @@ const ProductSec = () => {
           <div className="h-[0.2rem] w-[3rem] rounded-3xl bg-black "></div>
         </div>
         <div className="text-center mt-5 text-gray-400">
-          Products are stored in and then fetched from the mongodb database
-          using api calls.{" "}
+          Products are stored in and then fetched from the MongoDB database
+          using API calls.
         </div>
         <ProductLists />
       </div>
     </>
   );
 };
+
+// export async function getServerSideProps() {
+//   try {
+//     const response = await axios.get(
+//       "http://localhost:3000/api/seedproductapi"
+//     );
+//     const result = response.data;
+//     const data = result.data; // Extracting the 'data' array
+
+//     console.log("data", data);
+
+//     if (!data || data.length === 0) {
+//       return {
+//         notFound: true,
+//       };
+//     }
+
+//     return {
+//       props: {
+//         data,
+//       },
+//     };
+//   } catch (error) {
+//     console.error("Failed to fetch products:", error);
+//     return {
+//       props: {
+//         data: [],
+//       },
+//     };
+//   }
+// }
 
 export default ProductSec;

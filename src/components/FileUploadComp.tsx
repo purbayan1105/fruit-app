@@ -73,7 +73,7 @@ const FileUploadComp = ({ profile, setProfile }: any) => {
           <p className="text-gray-800 font-semibold">drag and drop</p>
         </div>
         <div className="text-gray-600 text-center">
-          PNG or JPEG only (Max 25 MB)
+          PNG or JPEG only (Max 10 MB)
         </div>
 
         {profile && (

@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
-import { FaBars, FaUser } from "react-icons/fa";
+import { FaBars, FaRegHeart, FaUser } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { toast } from "react-toastify";
 
@@ -69,6 +69,11 @@ const Navbar = () => {
         <div className=" lg:grid grid-flow-col items-center justify-center text-white px-10 space-x-8 hidden">
           <MdOutlineShoppingCart color="" size={25} />
           <CiSearch size={25} />
+          <Link href="/favourites">
+            {" "}
+            <FaRegHeart size={25} color="red" />
+          </Link>
+
           {context?.user ? (
             <button
               className="flex items-center gap-3 poppins bg-violet-500 text-white px-4 py-3 rounded-xl"
